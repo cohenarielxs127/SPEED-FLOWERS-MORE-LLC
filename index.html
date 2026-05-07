@@ -1,698 +1,738 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Speed Flowers & More LLC – Ocala, FL</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SPEED FLOWERS & MORE LLC</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
-:root {
-  --emerald:     #1B4D3E;
-  --emerald-mid: #2E7D60;
-  --emerald-lt:  #C8E6DA;
-  --gold:        #C9A84C;
-  --gold-lt:     #F5EDD3;
-  --gold-dark:   #8A6820;
-  --ink:         #141414;
-  --ink-soft:    #3D3730;
-  --muted:       #7A7165;
-  --cream:       #FDFAF4;
-  --cream-dark:  #F2EBD9;
-  --white:       #FFFFFF;
-  --border:      #DDD5C0;
+:root{
+  --primary:#6C63FF;
+  --primary-light:#E8E6FF;
+  --primary-dark:#4338CA;
+
+  --secondary:#0F766E;
+  --secondary-light:#CCFBF1;
+
+  --bg:#F8FAFC;
+  --bg-soft:#EEF2FF;
+
+  --text:#0F172A;
+  --muted:#475569;
+
+  --white:#ffffff;
+  --border:#CBD5E1;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
 
-/* ── SCROLLBAR ── */
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--cream-dark)}
-::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-/* ── NAV ── */
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Jost',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* NAV */
+
 nav{
-  position:fixed;top:0;width:100%;z-index:1000;
-  background:rgba(253,250,244,0.96);backdrop-filter:blur(12px);
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
 }
-.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 2rem}
-.logo{text-decoration:none;display:flex;flex-direction:column;line-height:1}
-.logo-main{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--emerald);letter-spacing:0.01em}
-.logo-sub{font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-dark);margin-top:2px}
-.nav-links{display:flex;gap:2.2rem;list-style:none}
-.nav-links a{text-decoration:none;color:var(--muted);font-size:0.82rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;transition:color .2s}
-.nav-links a:hover{color:var(--emerald)}
-.nav-cta{background:var(--emerald);color:var(--gold-lt);border:none;padding:.65rem 1.6rem;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .2s;text-decoration:none}
-.nav-cta:hover{background:var(--emerald-mid)}
 
-/* ── HERO ── */
+.nav-inner{
+  max-width:1200px;
+  margin:auto;
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 2rem;
+}
+
+.logo{
+  text-decoration:none;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.8rem;
+  color:var(--primary-dark);
+  font-weight:600;
+}
+
+.logo span{
+  color:var(--secondary);
+}
+
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:2rem;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--muted);
+  font-size:.9rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:500;
+  transition:.3s;
+}
+
+.nav-links a:hover{
+  color:var(--primary);
+}
+
+.nav-btn{
+  text-decoration:none;
+  background:var(--primary);
+  color:white;
+  padding:.8rem 1.4rem;
+  border-radius:50px;
+  font-size:.85rem;
+  transition:.3s;
+}
+
+.nav-btn:hover{
+  background:var(--primary-dark);
+}
+
+/* HERO */
+
 .hero{
-  min-height:100vh;padding-top:72px;
-  background:var(--emerald);
-  display:grid;grid-template-columns:1fr 1fr;
-  position:relative;overflow:hidden;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  background:linear-gradient(135deg,#EEF2FF 0%,#F8FAFC 50%,#CCFBF1 100%);
+  padding-top:70px;
 }
-.hero-deco{
-  position:absolute;top:-120px;left:-120px;
-  width:480px;height:480px;border-radius:50%;
-  background:radial-gradient(circle,rgba(201,168,76,.18) 0%,transparent 70%);
-  pointer-events:none;
+
+.hero-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  align-items:center;
+  padding:4rem 2rem;
 }
-.hero-deco2{
-  position:absolute;bottom:-80px;right:45%;
-  width:300px;height:300px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,255,255,.06) 0%,transparent 70%);
-  pointer-events:none;
+
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  font-size:.75rem;
+  color:var(--primary);
+  margin-bottom:1rem;
+  font-weight:600;
 }
-.hero-left{
-  display:flex;flex-direction:column;justify-content:center;
-  padding:5rem 3rem 5rem 4rem;
-  position:relative;z-index:2;
+
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem;
+  line-height:1.05;
+  font-weight:300;
+  margin-bottom:1.5rem;
 }
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:.6rem;
-  font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.6rem;
+
+.hero h1 em{
+  color:var(--primary-dark);
 }
-.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold)}
-.hero-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2.6rem,4.5vw,4.2rem);
-  font-weight:700;line-height:1.08;
-  color:var(--white);margin-bottom:1.6rem;
+
+.hero p{
+  color:var(--muted);
+  line-height:1.9;
+  margin-bottom:2rem;
+  max-width:520px;
 }
-.hero-title em{font-style:italic;color:var(--gold)}
-.hero-desc{font-size:1rem;line-height:1.85;color:rgba(255,255,255,.72);margin-bottom:2.5rem;max-width:420px}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-gold{background:var(--gold);color:var(--ink);padding:.9rem 2.2rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;transition:all .2s;border:none;cursor:pointer}
-.btn-gold:hover{background:#D4B560;transform:translateY(-2px)}
-.btn-ghost{background:transparent;color:var(--white);padding:.9rem 2.2rem;border-radius:4px;text-decoration:none;font-weight:500;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;transition:all .2s;border:1px solid rgba(255,255,255,.35);cursor:pointer}
-.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.6)}
-.hero-badge-row{display:flex;align-items:center;gap:1.2rem;margin-top:2.5rem}
-.hero-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:50px;padding:.5rem 1.2rem;font-size:.78rem;color:rgba(255,255,255,.8)}
-.hero-stars{color:var(--gold);letter-spacing:2px}
 
-.hero-right{position:relative;overflow:hidden}
-.hero-img-main{width:100%;height:100%;object-fit:cover;display:block}
-.hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(100deg,var(--emerald) 0%,transparent 35%);
+.hero-buttons{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
 }
-.hero-pill{
-  position:absolute;bottom:2.5rem;right:2rem;
-  background:var(--gold);color:var(--ink);
-  padding:.9rem 1.4rem;border-radius:12px;
-  text-align:center;font-weight:700;
+
+.btn-primary{
+  background:var(--primary);
+  color:white;
+  padding:1rem 2rem;
+  border-radius:50px;
+  text-decoration:none;
+  transition:.3s;
 }
-.hero-pill-num{font-family:'Playfair Display',serif;font-size:1.8rem;line-height:1}
-.hero-pill-label{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
 
-/* ── STRIP ── */
-.strip{background:var(--gold);padding:1.4rem 2rem}
-.strip-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center}
-.strip-item{color:var(--ink)}
-.strip-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;line-height:1}
-.strip-lbl{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-top:.2rem;opacity:.75}
-
-/* ── SECTION BASICS ── */
-section{padding:6rem 2rem}
-.container{max-width:1240px;margin:0 auto}
-.sec-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.7rem;display:flex;align-items:center;gap:.6rem}
-.sec-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
-.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.2vw,2.9rem);font-weight:700;color:var(--ink);margin-bottom:.9rem;line-height:1.15}
-.sec-sub{font-size:.98rem;color:var(--muted);line-height:1.82;max-width:560px}
-
-/* ── FLOWERS GRID ── */
-.flowers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:3rem}
-.f-card{border-radius:12px;overflow:hidden;background:var(--white);border:1px solid var(--border);transition:transform .3s,box-shadow .3s;position:relative}
-.f-card:hover{transform:translateY(-7px);box-shadow:0 20px 50px rgba(27,77,62,.14)}
-.f-img{height:230px;overflow:hidden;position:relative}
-.f-img img{width:100%;height:100%;object-fit:cover;transition:transform .55s}
-.f-card:hover .f-img img{transform:scale(1.07)}
-.f-tag{position:absolute;top:12px;left:12px;background:var(--emerald);color:var(--gold-lt);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .85rem;border-radius:3px}
-.f-body{padding:1.4rem 1.5rem}
-.f-name{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:500;color:var(--ink);margin-bottom:.5rem}
-.f-desc{font-size:.87rem;color:var(--muted);line-height:1.75;margin-bottom:1rem}
-.f-footer{display:flex;align-items:center;justify-content:space-between}
-.f-price{font-weight:700;color:var(--emerald);font-size:1rem}
-.f-btn{background:var(--gold-lt);color:var(--gold-dark);border:1px solid var(--gold);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .9rem;border-radius:3px;cursor:pointer;transition:all .2s;text-decoration:none}
-.f-btn:hover{background:var(--gold);color:var(--ink)}
-
-/* ── DARK OCCASIONS ── */
-.occasions-sec{background:var(--ink);padding:6rem 2rem}
-.occasions-sec .sec-eyebrow{color:var(--gold)}
-.occasions-sec .sec-eyebrow::before{background:var(--gold)}
-.occasions-sec .sec-title{color:var(--white)}
-.occasions-sec .sec-sub{color:rgba(255,255,255,.6)}
-.occ-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
-.occ-card{
-  border:1px solid rgba(255,255,255,.1);border-radius:10px;
-  padding:1.8rem 1.2rem;text-align:center;
-  transition:background .25s,border-color .25s;cursor:pointer;
-  background:rgba(255,255,255,.04);
+.btn-primary:hover{
+  background:var(--primary-dark);
 }
-.occ-card:hover{background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.4)}
-.occ-icon{font-size:1.9rem;margin-bottom:.75rem}
-.occ-name{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--white);margin-bottom:.35rem}
-.occ-sub{font-size:.75rem;color:rgba(255,255,255,.5);letter-spacing:.04em}
 
-/* ── SERVICES ── */
-.services-sec{background:var(--cream-dark)}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin-top:3rem}
-.svc-card{background:var(--white);border-radius:12px;padding:2rem 1.8rem;border:1px solid var(--border);transition:box-shadow .3s}
-.svc-card:hover{box-shadow:0 12px 36px rgba(27,77,62,.1)}
-.svc-icon-wrap{width:50px;height:50px;background:var(--emerald-lt);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.2rem}
-.svc-title{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--ink);margin-bottom:.55rem}
-.svc-desc{font-size:.86rem;color:var(--muted);line-height:1.78}
-
-/* ── REVIEWS ── */
-.reviews-sec{background:var(--cream)}
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-.rev-card{background:var(--white);border-radius:12px;padding:1.8rem;border:1px solid var(--border);position:relative}
-.rev-card::before{
-  content:'\201C';
-  font-family:'Playfair Display',serif;font-size:5rem;line-height:1;
-  color:var(--emerald-lt);position:absolute;top:.8rem;right:1.2rem;
+.btn-outline{
+  border:2px solid var(--secondary);
+  color:var(--secondary);
+  padding:1rem 2rem;
+  border-radius:50px;
+  text-decoration:none;
+  transition:.3s;
 }
-.rev-stars{color:var(--gold);letter-spacing:2px;font-size:.9rem;margin-bottom:.9rem}
-.rev-text{font-size:.9rem;line-height:1.82;color:var(--muted);font-style:italic;margin-bottom:1.3rem;position:relative;z-index:1}
-.rev-author{display:flex;align-items:center;gap:.85rem}
-.rev-av{width:42px;height:42px;border-radius:50%;background:var(--emerald);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;color:var(--gold-lt)}
-.rev-name{font-weight:600;font-size:.88rem;color:var(--ink)}
-.rev-meta{font-size:.75rem;color:var(--muted)}
 
-/* ── ORDER FORM ── */
-.order-sec{background:var(--emerald)}
-.order-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3rem}
-.order-sec .sec-eyebrow{color:var(--gold)}
-.order-sec .sec-eyebrow::before{background:var(--gold)}
-.order-sec .sec-title{color:var(--white)}
-.order-sec .sec-sub{color:rgba(255,255,255,.7)}
-.order-form-box{background:var(--white);border-radius:16px;padding:2.5rem}
-.frow{margin-bottom:1.15rem}
-.frow label{display:block;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
-.frow input,.frow select,.frow textarea{
-  width:100%;padding:.75rem 1rem;
-  border:1.5px solid var(--border);border-radius:6px;
-  font-family:'DM Sans',sans-serif;font-size:.9rem;background:var(--cream);color:var(--ink);
-  transition:border-color .2s;
+.btn-outline:hover{
+  background:var(--secondary);
+  color:white;
 }
-.frow input:focus,.frow select:focus,.frow textarea:focus{outline:none;border-color:var(--emerald)}
-.frow textarea{height:95px;resize:vertical}
-.form-grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.fsub{
-  background:var(--emerald);color:var(--gold-lt);border:none;width:100%;
-  padding:1rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:.92rem;
-  font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .2s;
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+  height:500px;
 }
-.fsub:hover{background:var(--emerald-mid)}
-.order-img{border-radius:16px;overflow:hidden;height:520px}
-.order-img img{width:100%;height:100%;object-fit:cover}
 
-/* ── MAP ── */
-.map-sec{background:var(--cream-dark)}
-.map-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:3rem;align-items:start;margin-top:3rem}
-.ci-list{display:flex;flex-direction:column;gap:1.6rem}
-.ci{display:flex;gap:1rem;align-items:flex-start}
-.ci-icon{width:46px;height:46px;min-width:46px;background:var(--emerald);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
-.ci-lbl{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.3rem}
-.ci-val{font-size:.94rem;color:var(--ink);line-height:1.65}
-.ci-val a{color:var(--emerald);text-decoration:none}
-.ci-val a:hover{text-decoration:underline}
-.map-embed{border-radius:16px;overflow:hidden;border:1px solid var(--border)}
-.map-embed iframe{display:block;width:100%;height:390px;border:none}
-.map-btns{margin-top:1rem;display:flex;gap:.8rem;flex-wrap:wrap}
-
-/* ── FOOTER ── */
-footer{background:#0D2A21;color:rgba(255,255,255,.65);padding:4.5rem 2rem 2rem}
-.footer-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-.footer-logo{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--white);margin-bottom:.9rem}
-.footer-logo span{color:var(--gold)}
-.footer-tagline{font-size:.88rem;line-height:1.75;margin-bottom:1.5rem}
-.footer-social{display:flex;gap:.7rem}
-.soc{width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:.82rem;color:var(--white);text-decoration:none;cursor:pointer;transition:background .2s}
-.soc:hover{background:var(--gold);color:var(--ink)}
-.fc-title{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--white);margin-bottom:1.1rem}
-.fc-links{list-style:none;display:flex;flex-direction:column;gap:.55rem}
-.fc-links a{color:rgba(255,255,255,.55);text-decoration:none;font-size:.86rem;transition:color .2s}
-.fc-links a:hover{color:var(--gold)}
-.footer-bottom{max-width:1240px;margin:0 auto;border-top:1px solid rgba(255,255,255,.09);padding-top:1.8rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.8rem}
-.footer-bottom a{color:rgba(255,255,255,.4);text-decoration:none}
-.footer-bottom a:hover{color:var(--gold)}
-
-/* ── PRIVACY MODAL ── */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9999;align-items:center;justify-content:center;padding:2rem}
-.modal-bg.open{display:flex}
-.modal{background:var(--white);border-radius:18px;max-width:680px;width:100%;max-height:82vh;overflow-y:auto;padding:2.5rem}
-.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
-.modal-title{font-family:'Playfair Display',serif;font-size:1.75rem;color:var(--ink)}
-.modal-x{background:none;border:1px solid var(--border);border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:1rem;color:var(--muted);transition:background .2s}
-.modal-x:hover{background:var(--cream-dark)}
-.modal-body h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);margin:1.4rem 0 .45rem}
-.modal-body p{font-size:.88rem;color:var(--muted);line-height:1.82;margin-bottom:.4rem}
-
-/* ── TOAST ── */
-.toast{position:fixed;bottom:2rem;right:2rem;background:var(--emerald);color:var(--gold-lt);padding:1rem 1.6rem;border-radius:8px;font-size:.9rem;z-index:9999;transform:translateY(110px);opacity:0;transition:all .4s;box-shadow:0 8px 30px rgba(0,0,0,.25)}
-.toast.show{transform:translateY(0);opacity:1}
-
-/* ── FADE UP ── */
-.fu{opacity:0;transform:translateY(28px);transition:opacity .65s,transform .65s}
-.fu.vis{opacity:1;transform:translateY(0)}
-
-/* ── RESPONSIVE ── */
-@media(max-width:960px){
-  .hero{grid-template-columns:1fr}
-  .hero-right{height:340px}
-  .flowers-grid,.svc-grid,.rev-grid{grid-template-columns:1fr 1fr}
-  .occ-grid{grid-template-columns:1fr 1fr}
-  .strip-inner{grid-template-columns:1fr 1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .map-layout,.order-layout{grid-template-columns:1fr}
-  .nav-links{display:none}
+.hero-grid img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:20px;
 }
-@media(max-width:580px){
-  .flowers-grid,.svc-grid,.rev-grid,.occ-grid{grid-template-columns:1fr}
+
+.hero-grid img:first-child{
+  grid-row:span 2;
+}
+
+/* SECTION */
+
+section{
+  padding:6rem 2rem;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-label{
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  font-size:.75rem;
+  color:var(--primary);
+  margin-bottom:1rem;
+}
+
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem;
+  margin-bottom:1rem;
+  font-weight:300;
+}
+
+.section-desc{
+  color:var(--muted);
+  max-width:650px;
+  line-height:1.8;
+}
+
+/* CARDS */
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2rem;
+  margin-top:3rem;
+}
+
+.card{
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  transition:.35s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 18px 40px rgba(0,0,0,.08);
+}
+
+.card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+}
+
+.card-body{
+  padding:1.5rem;
+}
+
+.card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.7rem;
+  margin-bottom:.6rem;
+}
+
+.card p{
+  color:var(--muted);
+  line-height:1.7;
+  margin-bottom:1rem;
+}
+
+.price{
+  color:var(--primary);
+  font-weight:600;
+}
+
+/* SERVICES */
+
+.services{
+  background:var(--bg-soft);
+}
+
+.service-box{
+  background:white;
+  padding:2rem;
+  border-radius:22px;
+  border:1px solid var(--border);
+}
+
+.service-box h3{
+  margin:1rem 0;
+  font-size:1.4rem;
+  font-family:'Cormorant Garamond',serif;
+}
+
+.service-box p{
+  color:var(--muted);
+  line-height:1.8;
+}
+
+/* CONTACT */
+
+.contact-wrap{
+  display:grid;
+  grid-template-columns:1fr 1.3fr;
+  gap:3rem;
+  margin-top:3rem;
+}
+
+.contact-info{
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+}
+
+.info{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:1.5rem;
+}
+
+.info h4{
+  margin-bottom:.6rem;
+  color:var(--primary-dark);
+}
+
+.info p,
+.info a{
+  color:var(--muted);
+  text-decoration:none;
+  line-height:1.7;
+}
+
+iframe{
+  width:100%;
+  height:450px;
+  border:none;
+  border-radius:24px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#0F172A;
+  color:rgba(255,255,255,.7);
+  padding:4rem 2rem 2rem;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:3rem;
+}
+
+.footer-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;
+  color:white;
+  margin-bottom:1rem;
+}
+
+.footer-links{
+  list-style:none;
+}
+
+.footer-links li{
+  margin-bottom:.8rem;
+}
+
+.footer-links a{
+  text-decoration:none;
+  color:rgba(255,255,255,.7);
+}
+
+.footer-links a:hover{
+  color:white;
+}
+
+.footer-bottom{
+  max-width:1200px;
+  margin:auto;
+  border-top:1px solid rgba(255,255,255,.1);
+  margin-top:3rem;
+  padding-top:2rem;
+  text-align:center;
+  font-size:.9rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .hero-inner,
+  .contact-wrap,
+  .grid-3,
+  .footer-inner{
+    grid-template-columns:1fr;
+  }
+
+  .hero-grid{
+    height:auto;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:3rem;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <!-- NAV -->
+
 <nav>
   <div class="nav-inner">
-    <a href="#home" class="logo">
-      <span class="logo-main">Speed Flowers &amp; More</span>
-      <span class="logo-sub">Ocala, Florida</span>
+    <a href="#" class="logo">
+      SPEED FLOWERS <span>& MORE</span>
     </a>
+
     <ul class="nav-links">
       <li><a href="#flowers">Flowers</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#reviews">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#" onclick="openPrivacy();return false">Privacy</a></li>
     </ul>
-    <a href="#order" class="nav-cta">Order Now</a>
+
+    <a href="#contact" class="nav-btn">
+      Order Now
+    </a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-deco"></div>
-  <div class="hero-deco2"></div>
-  <div class="hero-left">
-    <p class="hero-eyebrow">Ocala, Florida</p>
-    <h1 class="hero-title">Where Every Bloom <em>Tells a Story</em></h1>
-    <p class="hero-desc">Fresh, hand-crafted floral arrangements delivered with speed and heart. From single stems to grand event florals — we bring nature's finest to your door.</p>
-    <div class="hero-btns">
-      <a href="#flowers" class="btn-gold">Browse Arrangements</a>
-      <a href="#order" class="btn-ghost">Request a Quote</a>
-    </div>
-    <div class="hero-badge-row">
-      <div class="hero-badge"><span class="hero-stars">★★★★★</span>&nbsp; 5.0 Rating · Ocala's Trusted Florist</div>
-    </div>
-  </div>
-  <div class="hero-right">
-    <img class="hero-img-main" src="https://picsum.photos/id/110/800/900" alt="Beautiful flower arrangement">
-    <div class="hero-overlay"></div>
-    <div class="hero-pill">
-      <div class="hero-pill-num">Same</div>
-      <div class="hero-pill-label">Day Delivery</div>
-    </div>
-  </div>
-</section>
 
-<!-- STRIP -->
-<div class="strip">
-  <div class="strip-inner">
-    <div class="strip-item"><div class="strip-num">10+</div><div class="strip-lbl">Years Serving Ocala</div></div>
-    <div class="strip-item"><div class="strip-num">4,000+</div><div class="strip-lbl">Bouquets Crafted</div></div>
-    <div class="strip-item"><div class="strip-num">500+</div><div class="strip-lbl">Happy Clients</div></div>
-    <div class="strip-item"><div class="strip-num">Same Day</div><div class="strip-lbl">Delivery Available</div></div>
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div>
+      <div class="eyebrow">
+        🌸 Ocala, Florida
+      </div>
+
+      <h1>
+        Luxury blooms delivered with
+        <em>speed & elegance</em>
+      </h1>
+
+      <p>
+        Fresh handcrafted floral arrangements for every celebration.
+        Serving Ocala with same-day flower delivery, custom bouquets,
+        event florals, and unforgettable gifts.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#flowers" class="btn-primary">
+          Shop Flowers
+        </a>
+
+        <a href="#contact" class="btn-outline">
+          Request Quote
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-grid">
+      <img src="https://picsum.photos/id/110/600/800" alt="">
+      <img src="https://picsum.photos/id/152/500/400" alt="">
+      <img src="https://picsum.photos/id/292/500/400" alt="">
+    </div>
+
   </div>
-</div>
+
+</section>
 
 <!-- FLOWERS -->
-<section id="flowers" style="background:var(--cream)">
+
+<section id="flowers">
+
   <div class="container">
-    <p class="sec-eyebrow">Our Collection</p>
-    <h2 class="sec-title">Handcrafted Arrangements</h2>
-    <p class="sec-sub">Every bouquet is lovingly assembled using the freshest seasonal blooms, sourced daily to ensure lasting beauty.</p>
-    <div class="flowers-grid">
 
-      <div class="f-card fu">
-        <div class="f-img">
-          <img src="https://picsum.photos/id/110/600/400" alt="Classic Rose Bouquet">
-          <span class="f-tag">Bestseller</span>
-        </div>
-        <div class="f-body">
-          <h3 class="f-name">Classic Rose Bouquet</h3>
-          <p class="f-desc">Timeless long-stemmed roses in red, pink, or white — a universal expression of love and elegance. Perfect for any occasion.</p>
-          <div class="f-footer"><span class="f-price">From $45</span><a href="#order" class="f-btn">Order</a></div>
+    <div class="section-label">
+      Our Collection
+    </div>
+
+    <h2 class="section-title">
+      Beautiful Floral Arrangements
+    </h2>
+
+    <p class="section-desc">
+      Every bouquet is handcrafted with fresh premium flowers,
+      designed to create unforgettable moments.
+    </p>
+
+    <div class="grid-3">
+
+      <div class="card">
+        <img src="https://picsum.photos/id/110/600/400" alt="">
+        <div class="card-body">
+          <h3>Classic Roses</h3>
+          <p>
+            Romantic long-stemmed roses perfect for anniversaries,
+            birthdays, and celebrations.
+          </p>
+          <div class="price">
+            From $45
+          </div>
         </div>
       </div>
 
-      <div class="f-card fu">
-        <div class="f-img">
-          <img src="https://picsum.photos/id/142/600/400" alt="Sunflower Sunshine">
-          <span class="f-tag">Seasonal</span>
-        </div>
-        <div class="f-body">
-          <h3 class="f-name">Sunflower Sunshine</h3>
-          <p class="f-desc">Radiant sunflowers bursting with warmth and cheer. Ideal for birthdays, get-well wishes, or brightening someone's day.</p>
-          <div class="f-footer"><span class="f-price">From $38</span><a href="#order" class="f-btn">Order</a></div>
-        </div>
-      </div>
-
-      <div class="f-card fu">
-        <div class="f-img">
-          <img src="https://picsum.photos/id/146/600/400" alt="White Lily Elegance">
-          <span class="f-tag">Elegant</span>
-        </div>
-        <div class="f-body">
-          <h3 class="f-name">White Lily Elegance</h3>
-          <p class="f-desc">Stately Oriental lilies paired with lush greenery. A symbol of purity and refined beauty, perfect for weddings and formal events.</p>
-          <div class="f-footer"><span class="f-price">From $55</span><a href="#order" class="f-btn">Order</a></div>
+      <div class="card">
+        <img src="https://picsum.photos/id/142/600/400" alt="">
+        <div class="card-body">
+          <h3>Sunflower Joy</h3>
+          <p>
+            Bright cheerful arrangements that bring warmth and happiness
+            into every room.
+          </p>
+          <div class="price">
+            From $38
+          </div>
         </div>
       </div>
 
-      <div class="f-card fu">
-        <div class="f-img">
-          <img src="https://picsum.photos/id/292/600/400" alt="Garden Mix Bouquet">
-          <span class="f-tag">Popular</span>
-        </div>
-        <div class="f-body">
-          <h3 class="f-name">Garden Mix Bouquet</h3>
-          <p class="f-desc">A vibrant medley of seasonal wildflowers — dahlias, peonies, lavender, and more. Each arrangement is unique and full of life.</p>
-          <div class="f-footer"><span class="f-price">From $42</span><a href="#order" class="f-btn">Order</a></div>
-        </div>
-      </div>
-
-      <div class="f-card fu">
-        <div class="f-img">
-          <img src="https://picsum.photos/id/217/600/400" alt="Wedding Centerpiece">
-          <span class="f-tag">Weddings</span>
-        </div>
-        <div class="f-body">
-          <h3 class="f-name">Wedding Centerpiece</h3>
-          <p class="f-desc">Luxurious table arrangements designed to transform any venue. Fully customizable in palette and scale to match your vision.</p>
-          <div class="f-footer"><span class="f-price">From $95</span><a href="#order" class="f-btn">Order</a></div>
-        </div>
-      </div>
-
-      <div class="f-card fu">
-        <div class="f-img">
-          <img src="https://picsum.photos/id/159/600/400" alt="Orchid Delight">
-          <span class="f-tag">Premium</span>
-        </div>
-        <div class="f-body">
-          <h3 class="f-name">Orchid Delight</h3>
-          <p class="f-desc">Exotic Phalaenopsis orchids in elegant vessels. Long-lasting and breathtaking — a living work of art that blooms for months.</p>
-          <div class="f-footer"><span class="f-price">From $75</span><a href="#order" class="f-btn">Order</a></div>
+      <div class="card">
+        <img src="https://picsum.photos/id/159/600/400" alt="">
+        <div class="card-body">
+          <h3>Orchid Luxury</h3>
+          <p>
+            Elegant orchid displays with timeless beauty and lasting blooms.
+          </p>
+          <div class="price">
+            From $75
+          </div>
         </div>
       </div>
 
     </div>
-  </div>
-</section>
 
-<!-- OCCASIONS -->
-<section class="occasions-sec" id="occasions">
-  <div class="container">
-    <p class="sec-eyebrow">Every Moment</p>
-    <h2 class="sec-title" style="color:var(--white)">Flowers for Every Occasion</h2>
-    <p class="sec-sub" style="color:rgba(255,255,255,.6)">From intimate gestures to grand celebrations, we create the perfect arrangement for every chapter of life.</p>
-    <div class="occ-grid">
-      <div class="occ-card"><div class="occ-icon">💍</div><div class="occ-name">Weddings</div><div class="occ-sub">Bridal bouquets &amp; décor</div></div>
-      <div class="occ-card"><div class="occ-icon">🎂</div><div class="occ-name">Birthdays</div><div class="occ-sub">Bright &amp; cheerful blooms</div></div>
-      <div class="occ-card"><div class="occ-icon">❤️</div><div class="occ-name">Romance</div><div class="occ-sub">Anniversary &amp; Valentine's</div></div>
-      <div class="occ-card"><div class="occ-icon">🏢</div><div class="occ-name">Corporate</div><div class="occ-sub">Office &amp; event florals</div></div>
-      <div class="occ-card"><div class="occ-icon">🕊️</div><div class="occ-name">Sympathy</div><div class="occ-sub">Heartfelt condolences</div></div>
-      <div class="occ-card"><div class="occ-icon">🎓</div><div class="occ-name">Graduation</div><div class="occ-sub">Celebrate achievement</div></div>
-      <div class="occ-card"><div class="occ-icon">🍼</div><div class="occ-name">New Baby</div><div class="occ-sub">Welcoming new arrivals</div></div>
-      <div class="occ-card"><div class="occ-icon">🏠</div><div class="occ-name">Housewarming</div><div class="occ-sub">Home &amp; living gifts</div></div>
-    </div>
   </div>
+
 </section>
 
 <!-- SERVICES -->
-<section class="services-sec" id="services">
+
+<section class="services" id="services">
+
   <div class="container">
-    <p class="sec-eyebrow">What We Offer</p>
-    <h2 class="sec-title">Our Services</h2>
-    <p class="sec-sub">Speed, quality, and heart — everything you need from a florist, all in one place.</p>
-    <div class="svc-grid">
-      <div class="svc-card fu"><div class="svc-icon-wrap">🚚</div><h3 class="svc-title">Same-Day Delivery</h3><p class="svc-desc">Order before noon and we deliver fresh blooms anywhere in Ocala and surrounding Marion County that very same day. Surprise someone special!</p></div>
-      <div class="svc-card fu"><div class="svc-icon-wrap">💐</div><h3 class="svc-title">Custom Bouquets</h3><p class="svc-desc">Work directly with our expert florists to create a one-of-a-kind arrangement. Pick your flowers, colors, and style for something truly personal.</p></div>
-      <div class="svc-card fu"><div class="svc-icon-wrap">🎊</div><h3 class="svc-title">Event Floristry</h3><p class="svc-desc">Full-service floral design for weddings, corporate events, galas, and parties. We handle consultation, design, setup, and teardown.</p></div>
-      <div class="svc-card fu"><div class="svc-icon-wrap">🌿</div><h3 class="svc-title">Subscription Plans</h3><p class="svc-desc">Weekly or monthly flower subscriptions for your home or office. Fresh seasonal arrangements on your schedule at a special subscription rate.</p></div>
-      <div class="svc-card fu"><div class="svc-icon-wrap">🎁</div><h3 class="svc-title">Gift Add-Ons</h3><p class="svc-desc">Elevate your floral gift with chocolates, premium vases, greeting cards, and candles. We create complete gift packages for every occasion.</p></div>
-      <div class="svc-card fu"><div class="svc-icon-wrap">🌸</div><h3 class="svc-title">Seasonal Collections</h3><p class="svc-desc">Curated collections inspired by each season. From spring wildflowers to festive holiday arrangements — always fresh, always in season.</p></div>
+
+    <div class="section-label">
+      Services
     </div>
+
+    <h2 class="section-title">
+      What We Offer
+    </h2>
+
+    <p class="section-desc">
+      Full-service floristry for every occasion and celebration.
+    </p>
+
+    <div class="grid-3">
+
+      <div class="service-box">
+        <h3>🚚 Same-Day Delivery</h3>
+        <p>
+          Fast flower delivery throughout Ocala and nearby areas.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <h3>💐 Custom Bouquets</h3>
+        <p>
+          Personalized arrangements tailored to your style and event.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <h3>🎊 Event Floristry</h3>
+        <p>
+          Wedding flowers, centerpieces, and luxury event decoration.
+        </p>
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
-<!-- ORDER FORM -->
-<section class="order-sec" id="order">
+<!-- CONTACT -->
+
+<section id="contact">
+
   <div class="container">
-    <div class="order-layout">
+
+    <div class="section-label">
+      Contact
+    </div>
+
+    <h2 class="section-title">
+      Visit SPEED FLOWERS & MORE LLC
+    </h2>
+
+    <p class="section-desc">
+      We'd love to help you create something beautiful.
+    </p>
+
+    <div class="contact-wrap">
+
+      <div class="contact-info">
+
+        <div class="info">
+          <h4>📍 Address</h4>
+          <p>
+            134 Pecan Pass<br>
+            Ocala, FL 34472-9569<br>
+            United States
+          </p>
+        </div>
+
+        <div class="info">
+          <h4>📞 Phone</h4>
+          <a href="tel:12627278914">
+            +1 (262) 727-8914
+          </a>
+        </div>
+
+        <div class="info">
+          <h4>✉️ Email</h4>
+          <a href="mailto:contact@speedflowersmore.org">
+            contact@speedflowersmore.org
+          </a>
+        </div>
+
+        <div class="info">
+          <h4>🕒 Business Hours</h4>
+          <p>
+            Monday – Friday: 8AM – 7PM<br>
+            Saturday: 9AM – 6PM<br>
+            Sunday: 10AM – 4PM
+          </p>
+        </div>
+
+      </div>
+
       <div>
-        <p class="sec-eyebrow">Place An Order</p>
-        <h2 class="sec-title" style="color:var(--white)">Request Your Arrangement</h2>
-        <p class="sec-sub" style="color:rgba(255,255,255,.7)">Fill out the form and our team will reach out within 1 hour to confirm every detail and make your order perfect.</p>
-        <br><br>
-        <div style="display:flex;flex-direction:column;gap:1.2rem">
-          <div style="display:flex;align-items:center;gap:.9rem;color:rgba(255,255,255,.75);font-size:.88rem"><span style="font-size:1.2rem">📞</span><a href="tel:12627278914" style="color:var(--gold);text-decoration:none">+1 (262) 727-8914</a></div>
-          <div style="display:flex;align-items:center;gap:.9rem;color:rgba(255,255,255,.75);font-size:.88rem"><span style="font-size:1.2rem">✉️</span><a href="mailto:contact@speedflowersmore.org" style="color:var(--gold);text-decoration:none">contact@speedflowersmore.org</a></div>
-          <div style="display:flex;align-items:center;gap:.9rem;color:rgba(255,255,255,.75);font-size:.88rem"><span style="font-size:1.2rem">📍</span>134 Pecan Pass, Ocala, FL 34472</div>
-        </div>
+        <iframe
+          src="https://www.google.com/maps?q=134+Pecan+Pass+Ocala+FL+34472&output=embed"
+          loading="lazy">
+        </iframe>
       </div>
-      <div class="order-form-box">
-        <div class="form-grid2">
-          <div class="frow"><label>First Name</label><input type="text" placeholder="Jane"></div>
-          <div class="frow"><label>Last Name</label><input type="text" placeholder="Smith"></div>
-        </div>
-        <div class="frow"><label>Email Address</label><input type="email" placeholder="jane@example.com"></div>
-        <div class="frow"><label>Phone Number</label><input type="tel" placeholder="+1 (555) 000-0000"></div>
-        <div class="frow">
-          <label>Occasion</label>
-          <select>
-            <option value="">Select an occasion...</option>
-            <option>Wedding</option><option>Birthday</option><option>Anniversary</option>
-            <option>Corporate Event</option><option>Sympathy</option><option>Graduation</option>
-            <option>New Baby</option><option>Just Because</option><option>Other</option>
-          </select>
-        </div>
-        <div class="form-grid2">
-          <div class="frow"><label>Delivery Date</label><input type="date"></div>
-          <div class="frow"><label>Budget Range</label>
-            <select><option>$25 – $50</option><option>$50 – $100</option><option>$100 – $200</option><option>$200+</option></select>
-          </div>
-        </div>
-        <div class="frow"><label>Special Requests</label><textarea placeholder="Flower preferences, colors, message card text, delivery address..."></textarea></div>
-        <button class="fsub" onclick="submitForm()">Send Request &nbsp;✦</button>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- REVIEWS -->
-<section class="reviews-sec" id="reviews">
-  <div class="container">
-    <p class="sec-eyebrow">Customer Love</p>
-    <h2 class="sec-title">What Our Clients Say</h2>
-    <p class="sec-sub">Real words from the people we've had the pleasure of serving across Ocala and Marion County.</p>
-    <div class="rev-grid">
-      <div class="rev-card fu">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"The most stunning roses I've ever received. Speed Flowers delivered within hours and the arrangement lasted over two weeks. Absolutely worth every penny!"</p>
-        <div class="rev-author"><div class="rev-av">MR</div><div><div class="rev-name">Michael R.</div><div class="rev-meta">April 2025 · Google Review</div></div></div>
-      </div>
-      <div class="rev-card fu">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"Ordered flowers for my mom's birthday and was blown away. Same-day delivery, a handwritten card, and the freshest blooms I've seen in Ocala. 10/10!"</p>
-        <div class="rev-author"><div class="rev-av">SL</div><div><div class="rev-name">Sarah L.</div><div class="rev-meta">March 2025 · Yelp</div></div></div>
-      </div>
-      <div class="rev-card fu">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"We used Speed Flowers for our entire wedding — bouquets, centerpieces, church décor. Every arrangement was jaw-dropping. Our guests were constantly commenting!"</p>
-        <div class="rev-author"><div class="rev-av">JT</div><div><div class="rev-name">Jessica & Tom</div><div class="rev-meta">February 2025 · Wedding Wire</div></div></div>
-      </div>
-      <div class="rev-card fu">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"Our office subscription plan is a game changer. Every week a gorgeous new arrangement arrives and it transforms the whole atmosphere. Everyone loves it!"</p>
-        <div class="rev-author"><div class="rev-av">DK</div><div><div class="rev-name">Diana K.</div><div class="rev-meta">January 2025 · Google Review</div></div></div>
-      </div>
-      <div class="rev-card fu">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"Ordered sympathy flowers on short notice and the team handled everything with such compassion and professionalism. The arrangement was tasteful and beautiful."</p>
-        <div class="rev-author"><div class="rev-av">AP</div><div><div class="rev-name">Amanda P.</div><div class="rev-meta">December 2024 · Facebook</div></div></div>
-      </div>
-      <div class="rev-card fu">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"Three years of ordering and the quality never dips. The custom orchid arrangement for my mother-in-law was simply breathtaking. Speed Flowers is truly special."</p>
-        <div class="rev-author"><div class="rev-av">CM</div><div><div class="rev-name">Carlos M.</div><div class="rev-meta">November 2024 · Google Review</div></div></div>
-      </div>
     </div>
-  </div>
-</section>
 
-<!-- MAP & CONTACT -->
-<section class="map-sec" id="contact">
-  <div class="container">
-    <p class="sec-eyebrow">Find Us</p>
-    <h2 class="sec-title">Visit or Contact Us</h2>
-    <p class="sec-sub">We're located in Ocala, FL. Stop by our shop or reach out — we'd love to create something beautiful for you.</p>
-    <div class="map-layout">
-      <div class="ci-list">
-        <div class="ci">
-          <div class="ci-icon">📍</div>
-          <div>
-            <div class="ci-lbl">Address</div>
-            <div class="ci-val">134 Pecan Pass<br>Ocala, FL 34472-9569<br>United States</div>
-          </div>
-        </div>
-        <div class="ci">
-          <div class="ci-icon">📞</div>
-          <div>
-            <div class="ci-lbl">Phone</div>
-            <div class="ci-val"><a href="tel:12627278914">+1 (262) 727-8914</a></div>
-          </div>
-        </div>
-        <div class="ci">
-          <div class="ci-icon">✉️</div>
-          <div>
-            <div class="ci-lbl">Email</div>
-            <div class="ci-val"><a href="mailto:contact@speedflowersmore.org">contact@speedflowersmore.org</a></div>
-          </div>
-        </div>
-        <div class="ci">
-          <div class="ci-icon">🕐</div>
-          <div>
-            <div class="ci-lbl">Business Hours</div>
-            <div class="ci-val">Mon–Fri: 8:00 AM – 7:00 PM<br>Saturday: 9:00 AM – 6:00 PM<br>Sunday: 10:00 AM – 4:00 PM</div>
-          </div>
-        </div>
-        <div class="ci">
-          <div class="ci-icon">🚚</div>
-          <div>
-            <div class="ci-lbl">Delivery Area</div>
-            <div class="ci-val">Same-day delivery available<br>Order before 12:00 PM noon<br>Serving Ocala &amp; Marion County</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="map-embed">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.0!2d-82.031!3d29.125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e868a7b8b8b8b7%3A0x0!2s134+Pecan+Pass%2C+Ocala%2C+FL+34472!5e0!3m2!1sen!2sus!4v1234567890"
-            allowfullscreen="" loading="lazy"
-            title="Speed Flowers & More Location">
-          </iframe>
-        </div>
-        <div class="map-btns">
-          <a href="https://maps.google.com/?q=134+Pecan+Pass+Ocala+FL+34472" target="_blank" class="btn-gold" style="font-size:.8rem;padding:.7rem 1.4rem">📍 Open in Google Maps</a>
-          <a href="tel:12627278914" class="btn-outline" style="font-size:.8rem;padding:.7rem 1.4rem;color:var(--emerald);border-color:var(--emerald)">📞 Call Us Now</a>
-        </div>
-      </div>
-    </div>
   </div>
+
 </section>
 
 <!-- FOOTER -->
+
 <footer>
-  <div class="footer-grid">
+
+  <div class="footer-inner">
+
     <div>
-      <div class="footer-logo">Speed Flowers <span>&amp; More</span> LLC</div>
-      <p class="footer-tagline">Bringing beauty and meaning to every moment through the art of floristry. Proudly serving Ocala and Marion County, Florida.</p>
-      <div class="footer-social">
-        <a class="soc" href="#" title="Facebook">f</a>
-        <a class="soc" href="#" title="Instagram">📷</a>
-        <a class="soc" href="#" title="Pinterest">📌</a>
-        <a class="soc" href="#" title="Twitter/X">𝕏</a>
+      <div class="footer-logo">
+        SPEED FLOWERS & MORE LLC
       </div>
+
+      <p>
+        Premium floral arrangements and same-day delivery
+        throughout Ocala, Florida.
+      </p>
     </div>
+
     <div>
-      <div class="fc-title">Shop</div>
-      <ul class="fc-links">
-        <li><a href="#flowers">All Arrangements</a></li>
-        <li><a href="#flowers">Roses</a></li>
-        <li><a href="#flowers">Lilies</a></li>
-        <li><a href="#flowers">Orchids</a></li>
-        <li><a href="#flowers">Wedding Flowers</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="fc-title">Services</div>
-      <ul class="fc-links">
-        <li><a href="#services">Same-Day Delivery</a></li>
-        <li><a href="#services">Custom Bouquets</a></li>
-        <li><a href="#services">Event Floristry</a></li>
-        <li><a href="#services">Subscriptions</a></li>
-        <li><a href="#services">Gift Add-Ons</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="fc-title">Company</div>
-      <ul class="fc-links">
-        <li><a href="#home">About Us</a></li>
-        <li><a href="#reviews">Reviews</a></li>
+      <h4 style="margin-bottom:1rem;color:white;">Quick Links</h4>
+
+      <ul class="footer-links">
+        <li><a href="#flowers">Flowers</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#" onclick="openPrivacy();return false">Privacy Policy</a></li>
-        <li><a href="mailto:contact@speedflowersmore.org">Email Us</a></li>
       </ul>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 Speed Flowers &amp; More LLC · 134 Pecan Pass, Ocala, FL 34472</span>
-    <div style="display:flex;gap:1.5rem">
-      <a href="#" onclick="openPrivacy();return false">Privacy Policy</a>
-      <a href="mailto:contact@speedflowersmore.org">contact@speedflowersmore.org</a>
+
+    <div>
+      <h4 style="margin-bottom:1rem;color:white;">Contact</h4>
+
+      <ul class="footer-links">
+        <li>
+          <a href="mailto:contact@speedflowersmore.org">
+            contact@speedflowersmore.org
+          </a>
+        </li>
+
+        <li>
+          <a href="tel:12627278914">
+            +1 (262) 727-8914
+          </a>
+        </li>
+      </ul>
     </div>
+
   </div>
+
+  <div class="footer-bottom">
+    © 2025 SPEED FLOWERS & MORE LLC ·
+    134 Pecan Pass, Ocala, FL 34472
+  </div>
+
 </footer>
 
-<!-- PRIVACY MODAL -->
-<div class="modal-bg" id="privacyModal" onclick="bgClose(event)">
-  <div class="modal">
-    <div class="modal-head">
-      <h2 class="modal-title">Privacy Policy</h2>
-      <button class="modal-x" onclick="closePrivacy()">✕</button>
-    </div>
-    <div class="modal-body">
-      <p><strong>Last Updated: January 1, 2025</strong></p>
-      <p>Speed Flowers &amp; More LLC ("we," "our," or "us") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data.</p>
-      <h3>1. Information We Collect</h3>
-      <p>We may collect your name, email address, phone number, delivery address, and order details when you place an order or submit an inquiry. We also collect non-personal usage data via cookies and analytics.</p>
-      <h3>2. How We Use Your Information</h3>
-      <p>We use your information to process and fulfill orders, communicate about orders or inquiries, send promotional communications (with consent), and improve our website and services.</p>
-      <h3>3. Sharing of Information</h3>
-      <p>We do not sell, trade, or rent your personal information. We may share data with trusted service providers (delivery, payment processing) solely to operate our business.</p>
-      <h3>4. Cookies</h3>
-      <p>Our website uses cookies to enhance your browsing experience and analyze site traffic. You may disable cookies in browser settings, though some features may be affected.</p>
-      <h3>5. Data Security</h3>
-      <p>We implement industry-standard security measures to protect your personal information. However, no internet transmission is 100% secure.</p>
-      <h3>6. Your Rights</h3>
-      <p>You have the right to access, correct, or delete your personal information. Contact us at contact@speedflowersmore.org or +1 (262) 727-8914 to exercise these rights.</p>
-      <h3>7. Children's Privacy</h3>
-      <p>Our website is not directed at children under 13, and we do not knowingly collect information from minors.</p>
-      <h3>8. Changes to This Policy</h3>
-      <p>We may update this Privacy Policy periodically. Changes will be posted with an updated effective date. Continued use constitutes acceptance.</p>
-      <h3>9. Contact Us</h3>
-      <p><strong>Speed Flowers &amp; More LLC</strong><br>134 Pecan Pass, Ocala, FL 34472-9569<br>📧 contact@speedflowersmore.org<br>📞 +1 (262) 727-8914</p>
-    </div>
-  </div>
-</div>
-
-<!-- TOAST -->
-<div class="toast" id="toast">✦ Your request has been sent! We'll be in touch shortly.</div>
-
-<script>
-function openPrivacy(){document.getElementById('privacyModal').classList.add('open');document.body.style.overflow='hidden'}
-function closePrivacy(){document.getElementById('privacyModal').classList.remove('open');document.body.style.overflow=''}
-function bgClose(e){if(e.target===document.getElementById('privacyModal'))closePrivacy()}
-function submitForm(){const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4200)}
-const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.13});
-document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
-</script>
 </body>
 </html>
